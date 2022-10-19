@@ -15,5 +15,6 @@ const connectDB = async () => {
     process.exit(1)
   }
 }
+// helps us connect to the mongodb data base which is a function only
 
 module.exports = connectDB

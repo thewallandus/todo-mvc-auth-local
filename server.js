@@ -7,6 +7,7 @@ const MongoStore = require('connect-mongo')(session)
 const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
+// I'm going to my config folder and getting my database file
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
 
