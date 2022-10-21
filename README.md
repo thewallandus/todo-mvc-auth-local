@@ -24,6 +24,20 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 
 bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
 
+bcrypt => encrypts the password
+connect-mongo => connects mongodb
+dotenv => stores sensitive data
+ejs => templating language
+express-flash => extension of connect-flash with the ability to define a flash message and render it without redirecting the request.
+express-session => something to do with the user's sessions
+and doing stuff with it
+mongoose => schema models that enables us to talk to the database
+morgan => it has something to do with logging to the terminal => shows us stuff in the terminal
+passport => enables us to allow user authentication
+passport-local => it's saying we're going to use a local strategy => that means we're going to keep it local in our database.
+validator => check thing about strings or preventing bad things from happening to your database.
+
+
 ---
 
 # Install all the dependencies or node packages used for development via Terminal
