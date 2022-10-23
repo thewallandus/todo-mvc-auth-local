@@ -17,13 +17,17 @@
             </li>
     <% }) %>    
     </ul>
+    <!-- this displays all the todoItems on the page -->
 
     <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    <!-- this shows the username from the server -->
+    <!-- this is the total count of things we have left -->
 
     <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>
         <input type="submit">
     </form>
+    <!-- this is a form to handle our todos and add them -->
 
     <a href="/logout">Logout</a>
 

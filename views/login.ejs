@@ -12,15 +12,18 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
+    <!-- this is the login page errors -->
     <% if (locals.messages.info) { %>
         <% messages.info.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
+    <!-- this is how you set up the error page -->
     <form action="/login" method="POST">
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
         <input type="submit">
     </form>
+    <!-- this is the post request to check the login and login to the app -->
 </body>
 </html>

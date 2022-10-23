@@ -15,6 +15,6 @@ const TodoSchema = new mongoose.Schema({
   }
 })
 
-// 
+// this is the todo schema 
 
 module.exports = mongoose.model('Todo', TodoSchema)
