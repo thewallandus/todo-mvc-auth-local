@@ -7,4 +7,6 @@ module.exports = {
       }
     }
   }
+
+  // this defines the ensureauth function which is what we use to check authentication
   

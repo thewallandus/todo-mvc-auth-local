@@ -1,6 +1,9 @@
 const passport = require('passport')
+// ^ sets up password
 const validator = require('validator')
+// this is the part that validates if the correct stuff has been input by the user while he is trying to log in
 const User = require('../models/User')
+// this is going into the models and getting the User schema
 
  exports.getLogin = (req, res) => {
     if (req.user) {
@@ -10,6 +13,7 @@ const User = require('../models/User')
       title: 'Login'
     })
   }
+  // this gets the login
   
   exports.postLogin = (req, res, next) => {
     const validationErrors = []
@@ -21,6 +25,7 @@ const User = require('../models/User')
       return res.redirect('/login')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
+    // this checks stuff after login
   
     passport.authenticate('local', (err, user, info) => {
       if (err) { return next(err) }
@@ -35,6 +40,7 @@ const User = require('../models/User')
       })
     })(req, res, next)
   }
+  // this takes care of the errors if there are any
   
   exports.logout = (req, res) => {
     req.logout(() => {
@@ -46,6 +52,7 @@ const User = require('../models/User')
       res.redirect('/')
     })
   }
+  // this takes care of the logout
   
   exports.getSignup = (req, res) => {
     if (req.user) {
@@ -55,6 +62,7 @@ const User = require('../models/User')
       title: 'Create Account'
     })
   }
+  // this gets the signup
   
   exports.postSignup = (req, res, next) => {
     const validationErrors = []
@@ -67,12 +75,14 @@ const User = require('../models/User')
       return res.redirect('../signup')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
+    // ^ all the validation errors and dealing with them
   
     const user = new User({
       userName: req.body.userName,
       email: req.body.email,
       password: req.body.password
     })
+    // if authentication is successful it creates a new User
   
     User.findOne({$or: [
       {email: req.body.email},
@@ -94,3 +104,4 @@ const User = require('../models/User')
       })
     })
   }
+  // ^ in case account with that email address of username already exists
