@@ -22,7 +22,9 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+// ^ enables us to look at the things that are coming through and use them
 app.use(logger('dev'))
+// lets us see if there are any issues in the console
 // Sessions
 app.use(
     session({
